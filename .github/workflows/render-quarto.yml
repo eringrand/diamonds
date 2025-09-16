@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  render:
+  render-quarto:
     runs-on: ubuntu-latest
     steps:
       # Checkout this repo
