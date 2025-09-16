@@ -28,11 +28,11 @@ jobs:
            any::remotes
           needs: check
 
-      - name: Install chromote
+      - name: Install TrAILS from github
         run: |
           Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd')"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # check there are not overlaps
       - uses: r-lib/actions/check-r-package@v2
@@ -40,7 +40,7 @@ jobs:
       # Install quarto
       - uses: quarto-dev/quarto-actions/setup@v2
 
-      # Render the quarto file into html/
+      # Render the quarto file into html
       - name: Render
         run: quarto render index.qmd
 
