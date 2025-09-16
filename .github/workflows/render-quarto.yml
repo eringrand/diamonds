@@ -1,5 +1,5 @@
 # Example from: https://github.com/posit-conf-2025/r-production/blob/main/1-render-qmd.yaml
-name: render-quarto.yaml
+name: render-quarto.yml
 on:
   push:
   #    paths: ['**.qmd']
@@ -27,10 +27,6 @@ jobs:
            any::rcmdcheck
            any::remotes
           needs: check
-
-      - name: Install TrAILS from github
-        run: |
-          Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd', auth_token = '${{ secrets.GITHUB_TOKEN }}')"
 
       # check there are not overlaps
       - uses: r-lib/actions/check-r-package@v2
