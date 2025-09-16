@@ -6,7 +6,7 @@ editor: visual
 
 ## Quarto
 
-```{r}
+```{r output = FALSE}
 library(tidyverse)
 ```
 
