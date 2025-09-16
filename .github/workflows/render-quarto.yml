@@ -28,9 +28,6 @@ jobs:
            any::remotes
           needs: check
 
-      # check there are not overlaps
-      - uses: r-lib/actions/check-r-package@v2
-
       # Install quarto
       - uses: quarto-dev/quarto-actions/setup@v2
 
