@@ -18,5 +18,6 @@ diamonds %>%
   ggplot(aes(x = cut, y = mean, fill = color)) +
   geom_col(position = "dodge") +
   theme_bw()
+
 ```
 
