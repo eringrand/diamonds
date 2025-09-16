@@ -1,21 +1,5 @@
----
-title: As of `r format(lubridate::today(), "%b %e, %Y")`
-format: html
-editor: visual
----
-
-## Quarto
-
-```{r output = FALSE}
+```{r}
 library(ggplot2)
-```
 
-```{r echo = FALSE}
-diamonds |> 
-  group_by(cut, color) |> 
-  summarise(mean = mean(carat)) |> 
-  ggplot(aes(x = cut, y = mean, fill = color)) +
-  geom_col(position = "dodge") +
-  theme_bw()
-
+ggplot(diamonds) + geom_bar(aes(cut))
 ```
