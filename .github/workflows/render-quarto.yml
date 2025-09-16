@@ -33,7 +33,7 @@ jobs:
         run: |
           Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd')"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
       # check there are not overlaps
       - uses: r-lib/actions/check-r-package@v2
