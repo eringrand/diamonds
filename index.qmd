@@ -1,5 +1,13 @@
+
 ```{r}
 library(ggplot2)
+library(lubridate)
+```
 
+```{r}
+format(today(), "%b %e, %Y")
+```
+
+```{r}
 ggplot(diamonds) + geom_bar(aes(cut))
 ```
