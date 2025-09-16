@@ -22,13 +22,10 @@ jobs:
 
       # Install R packages from files/DESCRIPTION
       - uses: r-lib/actions/setup-r-dependencies@v2
-
-      # Install R packages from files/DESCRIPTION
-      - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
            any::rcmdcheck
-           github::TrAILS/trails_r_packge_tbd
+           github::EvalResearchAtTRAILS/trails_r_packge_tbd
           needs: check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
