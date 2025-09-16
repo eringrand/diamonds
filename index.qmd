@@ -7,9 +7,8 @@ editor: visual
 ## Quarto
 
 ```{r output = FALSE}
-library(tidyverse)
+library(ggplot2)
 ```
-
 
 ```{r echo = FALSE}
 diamonds %>% 
@@ -20,4 +19,3 @@ diamonds %>%
   theme_bw()
 
 ```
-
