@@ -57,4 +57,4 @@ jobs:
         with:
           commit_message: "Docs: Update generated PDF"
           file_pattern: 'index.pdf' # Specify the generated PDF file
-          branch: main # Branch to push to
+          branch: output # Branch to push to
