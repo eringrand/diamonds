@@ -9,23 +9,32 @@ name: render-quarto.yaml
 permissions: read-all
 
 jobs:
-  render-rmarkdown:
+  render:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # Install R
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      # Install R packages
+      - uses: r-lib/actions/setup-r-dependencies@v2
+
+      # Install quarto
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.4.515
 
-      - uses: r-lib/actions/setup-r@v2
 
       - name: Render Quarto files and Commit Results
         run: |
