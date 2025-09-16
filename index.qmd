@@ -9,5 +9,7 @@ format(today(), "%b %e, %Y")
 ```
 
 ```{r}
-ggplot(diamonds) + geom_bar(aes(cut))
+diamonds |> 
+  ggplot() +
+  geom_bar(aes(cut)) 
 ```
