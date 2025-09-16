@@ -12,6 +12,7 @@ jobs:
       contents: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       # Checkout this repo
       - uses: actions/checkout@v4
@@ -31,7 +32,7 @@ jobs:
 
       - name: Install TrAILS from github
         run: |
-          Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd')"
+          Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd', auth_token = ${{ secrets.GITHUB_TOKEN }})"
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
