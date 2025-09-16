@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       # Checkout this repo
@@ -32,9 +30,7 @@ jobs:
 
       - name: Install TrAILS from github
         run: |
-          Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd', auth_token = ${{ secrets.GITHUB_TOKEN }})"
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+          Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd', auth_token = '${{ secrets.GITHUB_TOKEN }}')"
 
       # check there are not overlaps
       - uses: r-lib/actions/check-r-package@v2
