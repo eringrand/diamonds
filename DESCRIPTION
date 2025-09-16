@@ -16,3 +16,6 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/eringrand/diamonds
 BugReports: https://github.com/eringrand/diamonds/issues
+Imports: 
+    ggplot2,
+    quarto

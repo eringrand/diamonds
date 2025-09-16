@@ -1,8 +1,10 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+# Example from: https://github.com/posit-conf-2025/r-production/blob/main/1-render-qmd.yaml
 on:
   push:
     paths: ['**.qmd']
+    branches: main
 
 name: render-quarto.yaml
 
@@ -32,9 +34,6 @@ jobs:
 
       # Install quarto
       - uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: 1.4.515
-
 
       - name: Render Quarto files and Commit Results
         run: |
