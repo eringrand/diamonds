@@ -16,6 +16,7 @@ diamonds %>%
   group_by(cut, color) %>% 
   summarise(mean = mean(carat)) %>% 
   ggplot(aes(x = cut, y = mean, fill = color)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  theme_bw()
 ```
 
