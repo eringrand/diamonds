@@ -1,3 +1,11 @@
+---
+format:
+  typst:
+    toc: true
+    section-numbering: 1.1.a
+    columns: 2
+---
+
 
 ```{r}
 library(ggplot2)
