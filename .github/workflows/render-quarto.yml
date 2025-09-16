@@ -28,8 +28,7 @@ jobs:
         with:
           extra-packages: |
            any::rcmdcheck
-           any::remotes
-           any::github::TrAILS/trails_r_packge_tbd
+           github::TrAILS/trails_r_packge_tbd
           needs: check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
