@@ -27,13 +27,10 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
-           any::rcmdcheck,
+           any::rcmdcheck
            any::remotes
+           any::github::TrAILS/trails_r_packge_tbd
           needs: check
-
-      - name: Install TrAILS from Github
-        run: |
-          Rscript -e "remotes::install_github('EvalResearchAtTRAILS/trails_r_packge_tbd')"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
 
