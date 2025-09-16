@@ -11,7 +11,7 @@ library(tidyverse)
 ```
 
 
-```{r}
+```{r echo = FALSE}
 diamonds %>% 
   group_by(cut, color) %>% 
   summarise(mean = mean(carat)) %>% 
