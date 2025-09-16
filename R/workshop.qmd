@@ -1,0 +1,21 @@
+---
+title: As of `r format(lubridate::today(), "%b %e, %Y")`
+format: html
+editor: visual
+---
+
+## Quarto
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(mean = mean(carat)) %>% 
+  ggplot(aes(x = cut, y = mean, fill = color)) +
+  geom_col(position = "dodge")
+```
+
