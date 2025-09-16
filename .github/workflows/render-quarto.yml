@@ -1,5 +1,5 @@
 # Example from: https://github.com/posit-conf-2025/r-production/blob/main/1-render-qmd.yaml
-name: render.yaml
+name: render-quarto.yaml
 on:
   push:
   #    paths: ['**.qmd']
