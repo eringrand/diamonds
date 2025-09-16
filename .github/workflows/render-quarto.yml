@@ -20,7 +20,7 @@ jobs:
         with:
           use-public-rspm: true
 
-      # Install R packages from files/DESCRIPTION
+      # Install R packages
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
@@ -45,6 +45,7 @@ jobs:
       #   uses: JamesIves/github-pages-deploy-action@v4.5.0
       #   with:
       #     folder: html
+
       - name: Commit and Push PDF
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
