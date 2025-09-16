@@ -5,12 +5,13 @@ on:
   #    paths: ['**.qmd']
     branches: main
 
-permissions:
-  contents: write
-
 jobs:
   render-quarto:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       # Checkout this repo
       - uses: actions/checkout@v4
